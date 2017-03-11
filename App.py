@@ -17,12 +17,12 @@ class FactorizeThread(threading.Thread):
 
     def run(self):
         print "Starting " + self.name
-        penetrate_url(self.name, self.counter, 200, self.url, self.data)
+        penetrate_url(self.name, 10, self.counter, self.url, self.data)
         print "Exiting " + self.name
 
 
 def penetrate_url(thread_name, delay, counter, url, data):
-    while counter:
+    while counter > 0:
         if exit_flag:
             thread_name.exit()
         time.sleep(delay)
@@ -38,16 +38,16 @@ class App(object):
         self.filename = filename
 
     def operate_times(self, urls):
-        start = time()
+        start = time.time()
         threads = []
         for url in urls:
-            thread = FactorizeThread(100, 'operate', 10, url, self.json_spec)
+            thread = FactorizeThread(100, 'operate', 1, url, self.json_spec)
             thread.start()
             threads.append(thread)
         for thread in threads:
             thread.join()
-        end = time()
-        print('Took % .3fseconds' % (end - start))
+        end = time.time()
+        print "%s: %s" % ('Seconds Took', str(end - start))
 
     def crack(self):
         print('Begin to crack the api ...')
