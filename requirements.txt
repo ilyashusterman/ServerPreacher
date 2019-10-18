@@ -10,7 +10,7 @@ Django==1.10.3
 django-braces==1.10.0
 django-mysql==1.1.0
 django-nose==1.4.4
-djangorestframework==3.4.6
+djangorestframework==3.9.1
 EasyProcess==0.2.3
 enum34==1.1.6
 funcsigs==1.0.2
