@@ -2,7 +2,7 @@ amqp==2.1.4
 billiard==3.5.0.2
 bunch==1.0.1
 celery==4.0.2
-certifi==2016.9.26
+certifi==2022.12.7
 cffi==1.9.1
 cryptography==1.5.3
 dj-database-url==0.4.1
